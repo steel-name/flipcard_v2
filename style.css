@@ -1,20 +1,27 @@
-
 body {
   font-family: sans-serif;
-  background: #fdf2f8;
+  background: rgb(134, 67, 104);
   text-align: center;
   padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
 }
+
 h1 {
   color: #d946ef;
 }
-#level-display, #score-display, #timer-display {
+
+#level-display,
+#score-display,
+#timer-display {
   font-size: 18px;
   margin: 5px;
 }
+
 #controls {
   margin: 10px;
 }
+
 button {
   padding: 8px 16px;
   margin: 5px;
@@ -25,18 +32,23 @@ button {
   color: white;
   cursor: pointer;
 }
+
 #game-board {
   display: grid;
-  grid-gap: 15px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 12px;
   margin-top: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
+
 .card {
-  width: 80px;
-  height: 80px;
+  aspect-ratio: 1 / 1;
   background: #a855f7;
   color: transparent;
-  font-size: 40px;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,12 +57,34 @@ button {
   user-select: none;
   transition: all 0.3s ease;
 }
+
 .card.flipped {
   background: #f9a8d4;
   color: black;
 }
+
 .card.matched {
   background: #6ee7b7;
   color: black;
   pointer-events: none;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  #game-board {
+    gap: 10px;
+  }
+
+  .card {
+    font-size: 1.5rem;
+  }
 }
