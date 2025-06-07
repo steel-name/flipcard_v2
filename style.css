@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  background: rgb(134, 67, 104);
+  background: #f0f0f0;
+  color: #333;
   text-align: center;
   padding: 20px;
   margin: 0;
@@ -8,47 +9,55 @@ body {
 }
 
 h1 {
-  color: #d946ef;
+  color: #222;
 }
 
 #level-display,
 #score-display,
 #timer-display {
-  font-size: 18px;
-  margin: 5px;
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+  color: #555;
 }
 
 #controls {
-  margin: 10px;
+  margin: 1rem 0;
 }
 
 button {
-  padding: 8px 16px;
-  margin: 5px;
-  font-size: 16px;
-  background: #d946ef;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  font-size: 1rem;
+  background: #666;
   border: none;
   border-radius: 8px;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background: #444;
 }
 
+/* Ganti grid ke flexbox */
 #game-board {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  gap: 12px;
-  margin-top: 30px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 90vw;
+  margin: 2rem auto 0;
+  padding: 0 0.5rem;
 }
 
+/* Kartu fleksibel ukuran relatif */
 .card {
+  flex: 1 1 22vw; /* basis 22% viewport width, fleksibel */
+  max-width: 120px;
   aspect-ratio: 1 / 1;
-  background: #a855f7;
+  background: #ddd;
   color: transparent;
-  font-size: 2rem;
+  font-size: 4vw; /* font ikut ukuran layar */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,35 +65,40 @@ button {
   cursor: pointer;
   user-select: none;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 80px; /* batas minimum */
 }
 
 .card.flipped {
-  background: #f9a8d4;
-  color: black;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .card.matched {
-  background: #6ee7b7;
-  color: black;
+  background: #aaa;
+  color: #222;
   pointer-events: none;
+  opacity: 0.7;
 }
 
-/* RESPONSIVE TWEAKS */
+/* Responsive tweaks */
 @media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;
   }
 
   button {
-    font-size: 14px;
-    padding: 6px 12px;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 
   #game-board {
-    gap: 10px;
+    gap: 0.7rem;
   }
 
   .card {
-    font-size: 1.5rem;
+    flex-basis: 30vw;
+    font-size: 6vw;
   }
 }
