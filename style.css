@@ -39,28 +39,38 @@ button:hover {
   background: #444;
 }
 
-#game-board {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 kolom sama besar */
-  gap: 10px;
-  max-width: 500px; /* kira-kira 5 x 100px */
-  margin: 2rem auto 0;
-  padding: 0 0.5rem;
+/* Ganti grid ke flexbox */
+body {
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  height: 100vh;            /* tinggi layar penuh */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  font-family: sans-serif;
+  flex-direction: column;   /* biar elemen di body bisa stack vertikal */
 }
 
+/* Kartu fleksibel ukuran relatif */
 .card {
+  flex: 1 1 22vw; /* basis 22% viewport width, fleksibel */
+  max-width: 120px;
   aspect-ratio: 1 / 1;
-  background: #ccc;
-  font-size: 2rem;
+  background: #ddd;
+  color: transparent;
+  font-size: 4vw; /* font ikut ukuran layar */
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   user-select: none;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 80px; /* batas minimum */
 }
-
 
 .card.flipped {
   background: #fff;
