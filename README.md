@@ -10,5 +10,5 @@ Cocokkan dua kartu yang sama dengan membaliknya. Tujuan utamanya: temukan semua 
 2. Buka file `index.html` di browser.
 
 ## 👨‍💻 Dibuat oleh
-**Biran** – siswa SMK Setia Bhakti jurusan RPL 🧠💻
+**Biran Ramadhan** – siswa kelas XI SMK Setia Bhakti jurusan RPL 🧠💻
 
