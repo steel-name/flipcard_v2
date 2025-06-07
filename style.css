@@ -1,66 +1,42 @@
+
 body {
   font-family: sans-serif;
-  background: #f0f0f0;
-  color: #333;
+  background:rgb(134, 67, 104);
   text-align: center;
   padding: 20px;
-  margin: 0;
-  box-sizing: border-box;
 }
-
 h1 {
-  color: #222;
+  color: #d946ef;
 }
-
-#level-display,
-#score-display,
-#timer-display {
-  font-size: 1.1rem;
-  margin: 0.3rem 0;
-  color: #555;
+#level-display, #score-display, #timer-display {
+  font-size: 18px;
+  margin: 5px;
 }
-
 #controls {
-  margin: 1rem 0;
+  margin: 10px;
 }
-
 button {
-  padding: 0.5rem 1rem;
-  margin: 0.3rem;
-  font-size: 1rem;
-  background: #666;
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 16px;
+  background: #d946ef;
   border: none;
   border-radius: 8px;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-button:hover {
-  background: #444;
+#game-board {
+  display: grid;
+  grid-gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
 }
-
-/* Ganti grid ke flexbox */
-body {
-  display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
-  height: 100vh;            /* tinggi layar penuh */
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  background: #fff;
-  font-family: sans-serif;
-  flex-direction: column;   /* biar elemen di body bisa stack vertikal */
-}
-
-/* Kartu fleksibel ukuran relatif */
 .card {
-  flex: 1 1 22vw; /* basis 22% viewport width, fleksibel */
-  max-width: 120px;
-  aspect-ratio: 1 / 1;
-  background: #ddd;
+  width: 80px;
+  height: 80px;
+  background: #a855f7;
   color: transparent;
-  font-size: 4vw; /* font ikut ukuran layar */
+  font-size: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,40 +44,13 @@ body {
   cursor: pointer;
   user-select: none;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  min-width: 80px; /* batas minimum */
 }
-
 .card.flipped {
-  background: #fff;
-  color: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background: #f9a8d4;
+  color: black;
 }
-
 .card.matched {
-  background: #aaa;
-  color: #222;
+  background: #6ee7b7;
+  color: black;
   pointer-events: none;
-  opacity: 0.7;
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  button {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  #game-board {
-    gap: 0.7rem;
-  }
-
-  .card {
-    flex-basis: 30vw;
-    font-size: 6vw;
-  }
 }
