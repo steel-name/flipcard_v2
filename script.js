@@ -8,7 +8,7 @@ const musicBtn = document.getElementById("music-btn");
 const bgm = document.getElementById("bgm");
 
 let level = 1;
-const maxLevel = 5;
+const maxLevel = 10;
 let score = 0;
 let flippedCards = [];
 let lock = false;

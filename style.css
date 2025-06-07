@@ -40,14 +40,17 @@ button:hover {
 }
 
 /* Ganti grid ke flexbox */
-#game-board {
+body {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 90vw;
-  margin: 2rem auto 0;
-  padding: 0 0.5rem;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  height: 100vh;            /* tinggi layar penuh */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  font-family: sans-serif;
+  flex-direction: column;   /* biar elemen di body bisa stack vertikal */
 }
 
 /* Kartu fleksibel ukuran relatif */
