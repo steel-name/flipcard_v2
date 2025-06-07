@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Selamat Menyelesaikan Tantangan!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff9e6, #ffe);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d4af37;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+
+    #controls {
+      margin: 30px 0;
+    }
+
+    button {
+      background-color: #ffd700;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #trophy {
+      font-size: 80px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏆 Selamat Telah Menyelesaikan Tantangan!</h1>
+  <p>Kerja kerasmu luar biasa! Kamu layak mendapatkan penghargaan ini! 🥳</p>
+  <p>Terus semangat dan jangan berhenti berkembang! 💪</p>
+
+  <div id="trophy">🏆</div>
+
+  <div id="controls">
+    <button id="music-btn">🎵 Putar Musik</button>
+  </div>
+
+  <audio id="bgm" loop>
+    <source src="bgm.mp3" type="audio/mpeg" />
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <script>
+    const musicBtn = document.getElementById('music-btn');
+    const bgm = document.getElementById('bgm');
+
+    musicBtn.addEventListener('click', () => {
+      if (bgm.paused) {
+        bgm.play();
+        musicBtn.textContent = '⏸️ Hentikan Musik';
+      } else {
+        bgm.pause();
+        musicBtn.textContent = '🎵 Putar Musik';
+      }
+    });
+  </script>
+</body>
+</html>
